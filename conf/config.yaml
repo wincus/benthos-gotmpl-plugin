@@ -1,0 +1,12 @@
+http:
+  enabled: false
+
+input:
+  generate:
+    mapping: root = {"name":"John"}
+    count: 1
+
+pipeline:
+  processors:
+    - gotmpl:
+        template: Hi There {{.name}}
