@@ -1,4 +1,4 @@
-module benthos-gotmpl-plugin
+module github.com/wincus/benthos-gotmpl-plugin
 
 go 1.19
 
