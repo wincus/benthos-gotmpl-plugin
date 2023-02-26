@@ -3,10 +3,19 @@ http:
 
 input:
   generate:
-    mapping: root = {"name":"John"}
+    mapping: |
+      root = {"name":"John", "toys": ["car", "phone", "cards"], "good": true}
     count: 1
 
 pipeline:
   processors:
     - gotmpl:
-        template: Hi There {{.name}}
+        template: >
+          Hi there {{ .name }}! Your toys are:
+          {{ range .toys }}
+            - {{ . -}}
+          {{ end }}
+          {{ if .good }}
+          
+          You have been a good boy!
+          {{ end }}
